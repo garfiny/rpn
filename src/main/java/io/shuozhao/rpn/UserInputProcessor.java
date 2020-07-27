@@ -15,8 +15,7 @@ public class UserInputProcessor {
         String[] params = input.split(" ");
         ProcessResult result = new ProcessResult();
         int currentPosition = 1;
-        for (int i = 0; i < params.length; i++) {
-            String p = params[i];
+        for (String p : params) {
             if (p.isBlank()) { // handle multiple spaces between input
                 currentPosition += 1;
                 continue;
@@ -25,7 +24,7 @@ public class UserInputProcessor {
                 Item item = Item.parseParameter(p);
                 if (item.isOperand()) {
                     calculator.addOperand(item);
-                } else if (item.isOperator() ){
+                } else if (item.isOperator()) {
                     calculator.doCalculate(item);
                 } else if (item.isCommand()) {
                     calculator.executeCommand(item);

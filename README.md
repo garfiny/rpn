@@ -28,8 +28,9 @@ NOTE: In some OS gradlew run could mess up the input and output together!
 ./gradlew run
 ```
 
-Or you can go into build folder/libs and fin rpn.jar, 
-and then run java command like this:
+Or after successfully build the project, you can go into the folder build/libs and find rpn.jar, 
+and then run java command:
 ```shell script
-java -cp rpn.jar io.shuozhao.rpn.App
+./gradlew build
+java -cp build/libs/rpn.jar io.shuozhao.rpn.App
 ```

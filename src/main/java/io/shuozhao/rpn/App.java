@@ -20,6 +20,7 @@ public class App {
     }
 
     public void start() {
+        System.out.println("Please start input parameters: (q to quit)");
         UserInputProcessor processor = new UserInputProcessor(calculator);
         while(true) {
             String line = scan();
